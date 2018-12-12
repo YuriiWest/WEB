@@ -1,0 +1,31 @@
+#panel {
+    display: grid;
+    grid-template-columns: 5fr 5fr 1fr;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0 5px 0 5px;
+}
+
+#creator,
+#edit,
+.creator {
+    display: grid;
+    grid-gap: 2px;
+    text-align: center;
+}
+
+.creator {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.creator div {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
