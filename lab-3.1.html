@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  
+  
+</head>
+
+<body>
+  <div id="body_b">Users:</div>
+  <ul id='students' >
+    <li >John</li>
+    <li id="student_one">Peter</li>
+  </ul>
+
+
+<script>
+alert(document.getElementsByTagName('head')[0].innerHTML);//innerHTML дозволяє отримати  і змінити  текст елемента 
+document.getElementById('body_b').innerHTML = '<b>Users 9  </b>';
+document.getElementById('student_one').innerHTML = 'Stepan';
+document.getElementById('students').style.color = '#555';
+ 
+  </script>
+
+</body>
+
+</html>
