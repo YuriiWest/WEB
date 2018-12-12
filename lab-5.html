@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Lab5</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta http-equiv="Cintent - Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div >
+    <h2 >Bookmarks:</h2>
+    <ol id="BookmarkTable" >
+    </ol>
+    <div>
+      <div class="line">
+        <button type="button" class="btn btn-primary" onclick="Addition();">Addition</button>
+        
+      </div>
+      <div class="line">
+        <button type="button" class="btn btn-danger" onclick="Delete();">Delete</button>
+        
+      </div>
+    <div>
+    </div>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <script >
+        
+class Bookmarks {
+    constructor(id, name, description, link, BoolEx) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.link = link;
+        this.BoolEx = BoolEx;
+        this.str = "<li id='" + this.id + "'> <b>" + this.name + ": </b> " + this.description + "   <a href='" + this.link + "'>Link</a></li>";
+        if (BoolEx == false) {
+          $("#BookmarkTable").html($("#BookmarkTable").html()+this.str);
+        }
+            else {
+              $("#"+id).html("<b>" + this.name + " </b> " + this.description + "   <a href='" + this.link + "'>Link</a>");
+        }
+    }
+}
+var IdMas = [];
+function Addition() {
+  var id = prompt("Id:");
+  id = parseInt(id);
+  if (id == IdMas[id-1]){
+    let bookmark = new Bookmarks (id,prompt("Name:"),prompt("Description:"),prompt("Link:"), true);//let оголошення у цьому блоці ,true це значення BoolEx
+  }
+  else {
+    let bookmark = new Bookmarks (id,prompt("Name:"),prompt("Description:"),prompt("Link:"), false);
+    IdMas[id-1] = id;
+  }
+}
+function Delete() {
+  var id = prompt("Choose id to delete element:");
+  id = parseInt(id);//Функция parseInt() принимает строку в качестве аргумента и возвращает целое число 
+  if (id == IdMas[id-1]) {
+    $("#BookmarkTable li:nth-child(" + id + ")").html("");
+  }
+  else
+    alert ("There is wrong id.");
+}
+      </script>
+  </body>
+</html>
